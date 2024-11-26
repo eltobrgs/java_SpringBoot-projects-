@@ -1,0 +1,326 @@
+/* Resetando estilos padrão */
+.home *, .info * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+.home body, .info body {
+    font-family: "Arial", sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo de links */
+.home a, .info a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border: #006400 2px solid;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.home a:hover, .info a:hover {
+    color: #fff;
+    background-color: #006400;
+}
+
+/* Cabeçalho */
+.home h1, .info h1 {
+    font-size: 3rem;
+    color: #006400;
+    margin: 50px 0 20px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px;
+}
+
+/* Estilo do Parágrafo */
+.home p, .info p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .home h1, .info h1 {
+        font-size: 2.5rem;
+    }
+
+    .home p, .info p {
+        font-size: 1rem;
+    }
+
+    .home .flex-container, .info .tech-list {
+        flex-direction: column;
+    }
+
+    .home img, .info .top img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Seção principal e cabeçalho específico */
+.home .top, .info .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+    border: #006400 2px solid;
+    border-radius: 20px;
+}
+
+/* Imagens */
+.home img, .info .top img {
+    border-radius: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.home img:hover, .info .top img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Home Específico */
+.home .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.home .flex-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.home p:nth-child(odd) {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Info específico */
+.info h2 {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-top: 40px;
+}
+
+.info .tech-list, .info .tech-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.info .tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.info .tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info .tech-item h3 {
+    font-size: 1.5rem;
+    color: #006400;
+    margin-bottom: 10px;
+}
+
+.info .tech-item p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+
+
+
+/* Resetando estilos padrão */
+.tuto * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo Geral */
+.tuto body {
+    font-family: "Arial", sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Cabeçalho */
+.tuto header {
+    border: #006400 2px solid;
+    color: #006400;
+    padding: 30px 20px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.tuto header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 2px;
+}
+
+.tuto header p {
+    font-size: 1.2rem;
+}
+
+/* Corpo Principal */
+.tuto main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+}
+
+.tuto section {
+    margin-bottom: 30px;
+}
+
+.tuto section h2 {
+    font-size: 1.8rem;
+    color: #006400;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.tuto section p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #555;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Listas */
+.tuto section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.tuto section li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Código */
+.tuto pre, .tuto code {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-x: auto;
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Adiciona quebra de linha automática */
+}
+
+.tuto pre {
+    margin: 15px 0;
+}
+
+/* Links */
+.tuto a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    border: #006400 2px solid;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.tuto a:hover {
+    color: #fff;
+    background-color: #006400;
+}
+
+/* Imagens */
+.tuto img {
+    border-radius: 10px;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.tuto img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+.tuto .botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.w-img img {
+    height: 850px;
+    width: 750px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .tuto header h1 {
+        font-size: 2.5rem;
+    }
+
+    .tuto section p, .tuto section li {
+        font-size: 0.9rem;
+    }
+
+    .tuto img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+    padding: 15px 0;
+    border-top: 1px solid #ddd;
+}
