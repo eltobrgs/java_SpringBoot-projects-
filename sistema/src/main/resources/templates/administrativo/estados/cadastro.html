@@ -1,26 +1,4 @@
-<!-- <!DOCTYPE html>
-<html xmlns:th="https://thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-</head>
 
-<body>
-    <form action="/administrativo/estado/salvar" th:object="${estado}" method="post">
-        <label for="nome">Nome do Estado</label>
-        <input type="text"  th:field="*{nome}">
-        <label for="nome">Sigla do Estado</label>
-        <input type="text" th:field="*{sigla}">
-
-        <input type="hidden" th:field="*{id}">
-
-        <button type="submit">Salvar</button>
-    </form>
-</body>
-</html> -->
 
 
 <!DOCTYPE html>
@@ -60,13 +38,13 @@ lang="en">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/administrativo">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/administrativo">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/administrativo/estado/cadastrar">cadastro</a>
+                        <a class="nav-link" href="">cadastro</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/administrativo/estado/listar">Lista</a>
+                        <a class="nav-link" href="">Lista</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -83,7 +61,7 @@ lang="en">
 
 
         <form action="/administrativo/estado/salvar" th:object="${estado}" method="post">
-            <div class="mb-3">
+            <div class="mb-3" style="display: none;">
                 <label for="nome">ID:</label>
                 <input type="text" readonly="true" class="form-control" id="id" th:field="*{id}" placeholder="Será gerado automaticamente" >
               </div>
@@ -96,6 +74,7 @@ lang="en">
                 <input type="text" class="form-control" id="sigla" th:field="*{sigla}" >
               </div>
             <a><button  class="btn btn-primary">salvar</button> </a>
+            <a href="/administrativo/estado/listar"><button  class="btn btn-primary">Lista de estados</button></a>
 
           </form>
 
