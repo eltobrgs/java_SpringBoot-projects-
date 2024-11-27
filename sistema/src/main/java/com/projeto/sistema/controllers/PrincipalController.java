@@ -1,14 +1,16 @@
-package com.projeto.sistema.controllers;
+package com.projeto.sistema.controllers; // Pacote onde a classe está localizada
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller; // Importa a anotação Controller
+import org.springframework.web.bind.annotation.GetMapping; // Importa a anotação GetMapping para tratar requisições GET
 
+// A classe é um controlador do Spring, responsável por lidar com as rotas de acesso.
 @Controller
 public class PrincipalController {
-    @GetMapping("/administrativo") // http://localhost:8080/administrativo, serve para acessar a página administrativo, mapeando a rota /administrativo
-    public String acessarAdministrativo() { // Método que retorna a página home.html
-        return "administrativo/home";
-    }
 
-    
+    // A anotação @GetMapping mapeia a URL "/administrativo" para o método abaixo
+    @GetMapping("/administrativo")
+    public String acessarAdministrativo() {
+        // Retorna o nome da view (arquivo HTML) que será renderizado para o usuário
+        return "administrativo/home"; // A view home.html dentro da pasta "administrativo"
+    }
 }
