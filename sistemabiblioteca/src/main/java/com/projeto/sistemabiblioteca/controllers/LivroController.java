@@ -33,6 +33,7 @@ public class LivroController {
         return mv; // Retorna o ModelAndView configurado
     }
 
+    
     @GetMapping("/biblioteca/livro/remover/{id}") // Mapeia a rota para remover um livro pelo ID
     public ModelAndView remover(@PathVariable("id") Long id) {
         livroRepository.deleteById(id); // Remove o livro do banco de dados usando o ID
