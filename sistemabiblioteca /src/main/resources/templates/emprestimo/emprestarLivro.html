@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" lang="pt">
+
+<head>
+    <title>Emprestar Livro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body class="container mt-4">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4 shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="/biblioteca">
+                    <!-- Novo ícone SVG para a biblioteca (livro aberto) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-book-half" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V.5A.5.5 0 0 1 2 0h6zM9 6V1H2v5h7zM8 16a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-.5.5H8zM9 10v5h6V10H9z" />
+                    </svg>
+                    <span class="ms-2">Biblioteca</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" href="/livro/lista">
+                                <!-- Novo ícone SVG para lista de livros -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-bookmark-dash" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 2h12a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2zM10.5 7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5V7a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5z" />
+                                </svg>
+                                <span class="ms-2">Lista de Livros</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" href="/emprestimo/lista">
+                                <!-- Novo ícone SVG para livros emprestados -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a8 8 0 1 0 0 16 8 8 0 0 0 0-16zM4 9.5l4 4 4-4H9V5h4a.5.5 0 0 1 .5.5V9h-4V6.5L8 4l-4 4v2h4V9H4z" />
+                                </svg>
+                                <span class="ms-2">Livros Emprestados</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" href="/livro/cadastro">
+                                <!-- Novo ícone SVG para cadastrar livro -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm1 7h3a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H9v3a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5V9H3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h4V3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v4z" />
+                                </svg>
+                                <span class="ms-2">Cadastrar Livro</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center" href="/emprestimo/emprestar">
+                                <!-- Novo ícone SVG para emprestar livro -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 0a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 12.5a.5.5 0 0 1-.5-.5V9h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3V5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3v3a.5.5 0 0 1-.5.5h-1z" />
+                                </svg>
+                                <span class="ms-2">Emprestar Livro</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <h1 class="text-center mb-4">Emprestar Livro</h1>
+        <form th:action="@{/emprestimo/salvar}" th:object="${emprestimo}" method="post">
+            <div class="mb-3">
+                <label for="livro" class="form-label">Livro:</label>
+                <select id="livro" class="form-select" th:field="*{livro}" required>
+                    <option th:each="livro : ${livros}" th:value="${livro.id}" th:text="${livro.titulo}">Selecione um
+                        livro</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="usuario" class="form-label">Usuário:</label>
+                <input type="text" id="usuario" class="form-control" th:field="*{usuario}" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="dataEmprestimo" class="form-label">Data de Empréstimo:</label>
+                <input type="date" id="dataEmprestimo" class="form-control" th:field="*{dataEmprestimo}" required />
+            </div>
+
+            <div class="mb-3">
+                <label for="dataDevolucao" class="form-label">Data de Devolução:</label>
+                <input type="date" id="dataDevolucao" class="form-control" th:field="*{dataDevolucao}" required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Emprestar</button>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
