@@ -1,45 +1,35 @@
+// Alteração no Emprestimo.java
 package com.projeto.sistemabiblioteca.entities;
 
 import java.time.LocalDate;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "emprestimo")
+@Document(collection = "emprestimos")
 public class Emprestimo {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @ManyToOne
-    private Livro livro;
-    
+    private String id;
+    private String livroId; // Armazena apenas o ID do Livro
     private String usuario;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
 
-    public Emprestimo() {}
-
-    public Long getId() {
+    // Getters e Setters
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Livro getLivro() {
-        return livro;
+    public String getLivroId() {
+        return livroId;
     }
 
-    public void setLivro(Livro livro) {
-        this.livro = livro;
+    public void setLivroId(String livroId) {
+        this.livroId = livroId;
     }
 
     public String getUsuario() {

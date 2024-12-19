@@ -2,21 +2,16 @@ package com.projeto.sistemabiblioteca.entities;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "livro")
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "livros")
 public class Livro implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)    
-    private Long id;
-    
+    private String id;
     private String titulo;
     private String autor;
     private String categoria;
@@ -24,17 +19,15 @@ public class Livro implements Serializable {
     private String editora;
     private String isbn;
     private Integer anoPublicacao;
-    
     private Boolean emprestado = false;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
-    public static long getSerialversionuid() {
-        return serialVersionUID;
-    }
-    public Long getId() {
+
+    // Getters e Setters
+    public String getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getTitulo() {
@@ -97,6 +90,4 @@ public class Livro implements Serializable {
     public void setDataDevolucao(LocalDate dataDevolucao) {
         this.dataDevolucao = dataDevolucao;
     }
-
-    
 }

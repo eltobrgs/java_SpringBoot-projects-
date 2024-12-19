@@ -50,7 +50,7 @@ public class LivroController {
      * Endpoint para carregar o formulário de edição de livro.
      */
     @GetMapping("/editar/{id}")
-    public String editarLivro(@PathVariable Long id, Model model) {
+    public String editarLivro(@PathVariable String id, Model model) {
         Livro livro = livroRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Livro não encontrado"));
         model.addAttribute("livro", livro);
@@ -84,7 +84,7 @@ public class LivroController {
      * Endpoint para deletar um livro.
      */
     @GetMapping("/deletar/{id}")
-    public String deletarLivro(@PathVariable Long id) {
+    public String deletarLivro(@PathVariable String id) {
         livroRepository.deleteById(id);
         return "redirect:/livro/lista";
     }
